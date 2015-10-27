@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+<head>
+  <meta charset="utf-8">
+  <title>Task1</title>
+  <script src="3rdparty/angular.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body ng-init="sharedValue = 'test1'">
+
+    Root: {{sharedValue}}
+   <div ng-controller="ParentCtrl1">
+      ParentCtrl1: <input ng-model="$root.sharedValue"> {{sharedValue}}
+
+      <div ng-controller="ChildCtrl1">
+        ChildCtrl1: <input ng-model="$root.sharedValue"> {{sharedValue}}
+      </div>
+
+      <div ng-controller="ChildCtrl2">
+        ChildCtrl2: <input ng-model="$root.sharedValue"> {{sharedValue}}
+      </div>
+   </div>
+
+   <div ng-controller="ParentCtrl1">
+      <input ng-model="$root.sharedValue"> {{sharedValue}}
+   </div>
+
+   </div>
+
+   <div ng-controller="ParentCtrl2">
+      ParentCtrl2: <input ng-model="$root.sharedValue"> {{sharedValue}}
+   </div>
+
+</body>
+</html>
