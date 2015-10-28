@@ -21,22 +21,24 @@
 -->
 					parentCtrl1:
 					<div ng-controller="parentCtrl1">
-						<span><input ng-model="scopeValue" type="text"/></span>
-						<span><div >{{scopeValue}}</div></span>
-						ChildCtrl1:
+						<span><input ng-model="$root.scopeValue" type="text"/></span>
+						<span>{{$root.scopeValue}}</span>
+						
 						<div ng-controller="ChildCtrl1">
-							<span><input ng-model="scopeValue" type="text"/></span>
-							<span><div >{{scopeValue}}</div></span>
+							ChildCtrl1:
+							<span><input ng-model="$root.scopeValue" type="text"/></span>
+							<span>{{$root.scopeValue}}</span>
 						</div>
 					</div>
 					parentCtrl2:
 					<div ng-controller="parentCtrl2">
-						<span><input ng-model="scopeValue" type="text"/></span>
-						<span><div >{{scopeValue}}</div></span>
-						ChildCtrl2:
+						<span><input ng-model="$root.scopeValue" type="text"/></span>
+						<span>{{$root.scopeValue}}</span>
+
 						<div ng-controller="ChildCtrl2">
-							<span><input ng-model="scopeValue" type="text"/></span>
-							<span><div >{{scopeValue}}</div></span>
+							ChildCtrl2:
+							<span><input ng-model="$root.scopeValue" type="text"/></span>
+							<span>{{$root.scopeValue}}</span>
 						</div>
 					</div>
 
