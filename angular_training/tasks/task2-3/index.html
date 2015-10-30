@@ -2,16 +2,17 @@
 <html lang="en" ng-app="testApp">
 <head>
   <meta charset="utf-8">
-  <title>Task2</title>
+  <title>Task2-3</title>
   <link rel="stylesheet" href="3rdparty/bootstrap/dist/css/bootstrap.css">
   <script src="3rdparty/angular.js"></script>
   <script src="js/app.js"></script>
 </head>
+<!--  here is declared title propery in the root scope that is the same as custom_tab directive has-->
 <body ng-controller="testAppCtrl" ng-init="title = 'title from root scope'">
 
   <h1>{{title}}</h1>
 
-    <custom_tabs>   
+    <custom_tabs>    
 
       <custom_tab ng-repeat="tab in tabs" title="tab.title" on-tab-activated="tab.loader()">
          {{tab.content || 'Loading...'}}

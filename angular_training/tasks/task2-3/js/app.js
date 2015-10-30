@@ -6,31 +6,24 @@ var testApp = angular.module('testApp', []);
 testApp.controller('testAppCtrl', ['$scope', '$timeout', function($scope, $timeout){
 
 	$scope.tabs = [
-		{
-			title: "Tab1",
-			content: 'Tab1 is loading...'
-		},
-		{
-			title: "Second tab"
-		}
-		,
-		{
-			title: "tab3",
-		}
+		{title: "Tab1", content: 'Tab1 is loading...'},
+		{title: "Second tab"},
+		{title: "tab3"}
 	];
 
+	//add loader for each tab
 	angular.forEach($scope.tabs, function(tab) {
-
 		tab.loader= function() {
 				if(!this.loaded) {
 					var thisObj = this;
+					
+					//timeout simulates loading time
 					$timeout(function() {
 	            		thisObj.content = thisObj.title + " loaded content";
 	            		thisObj.loaded = true;
 					}, 3000);
 				}
 			}
-
 	});
 }])
 
