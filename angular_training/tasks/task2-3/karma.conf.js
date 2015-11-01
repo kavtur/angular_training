@@ -15,9 +15,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files : [
-      '3rdparty/angular.js',
+	  '3rdparty/jquery.js',
+      '3rdparty/angular.js',	  
+	  '3rdparty/angular-mocks/angular-mocks.js',
       'js/**/*.js',
-      'test/**/*.js'
+      'test/**/*.js',
+	  '*.html'
     ],
 
 
@@ -30,6 +33,11 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 	preprocessors: {
       '**/*.html': ['ng-html2js']
+    },
+	
+	ngHtml2JsPreprocessor: {
+
+		  moduleName: 'testApp'
     },
 
 

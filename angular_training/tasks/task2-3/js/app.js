@@ -60,7 +60,7 @@ testApp.directive('customTabs', function(){
 }).directive('customTab', function(){
 	return {
 		 scope: {
-		 	title: '=',
+		 	title: '@',
 		 	'onTabActivatedHandler' : '&onTabActivated'
 		 },
 		 require: '^customTabs',

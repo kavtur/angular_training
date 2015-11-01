@@ -14,7 +14,7 @@
 
     <custom_tabs>    
 
-      <custom_tab ng-repeat="tab in tabs" title="tab.title" on-tab-activated="tab.loader()">
+      <custom_tab ng-repeat="tab in tabs" title="{{tab.title}}" on-tab-activated="tab.loader()">
          {{tab.content || 'Loading...'}}
           <br>
          {{title}}

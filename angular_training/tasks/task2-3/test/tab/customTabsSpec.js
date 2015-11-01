@@ -13,12 +13,37 @@ describe('Unit tests for tabs', function() {
     $rootScope = _$rootScope_;
   }));
 
-  it('Replaces the element with the appropriate content', function() {
+  it('Should call onTabActivated handler', function() {
     // Compile a piece of HTML containing the directive
-    var element = $compile("<custom_tabs></custom_tabs>")($rootScope);
-    // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
+    
+    var tab1Activated = false;
+   
+
+    $rootScope.tab1Loader = function() {
+      tab1Activated = true;
+    }
+
+    var tab2Activated = false;
+    $rootScope.tab2Loader = function() {
+      tab2Activated = true;
+    }
+
+    var element = $compile('<custom_tabs>\
+                                <custom_tab title="Tab1" on-tab-activated="tab1Loader()">\
+                                    Tab1 content\
+                                </custom_tab>\
+                                <custom_tab title="Tab2" on-tab-activated="tab2Loader()">\
+                                    Tab2 content\
+                                </custom_tab>\
+                          </custom_tabs>')($rootScope);
+
     $rootScope.$digest();
-    // Check that the compiled element contains the templated content
-    expect(element.html()).toContain("lidless, wreathed in flame, 2 times");
+
+    //trigger
+    angular.element(element.find('a')[1]).trigger('click');
+
+    expect(tab1Activated).toBeFalsy();
+    expect(tab2Activated).toBeTruthy();
+
   });
 });
