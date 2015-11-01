@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+	<title>My HTML File</title>
+	<script src="js/angular/angular.js"></script>
+	<script src="js/custom.js"></script>
+
+</head>
+	<body ng-app="task2" ng-controller="task2Controller" ng-init="name='FakeTab'">
+	<!-- 
+	3. Create application that will use tab control and will show that ng-transclude jumps over isolated scope.
+	For that initialize value in root scope with the same name as tab control has in isolated scope and uses for own template (for example title which is the title for the tab).
+	also use {{}} expression for displaying the title value from root scope above tab control is used and alos in one of its tab (in pane).
+	-->
+	<tabs >
+		<tab name="Tab1" on-tab-activated="tabActivated(name)">
+			<div> Tab 1 header</div>
+			<div> Tab 1 Content {{name}}</div>
+			
+		</tab>
+
+		<tab name="Tab2" on-tab-activated="tabActivated(name)">
+			<div> Tab 2 header</div>
+			<div> Tab 2 Content {{name}}</div>
+			
+		</tab>
+	</tabs>
+
+	</body>
+</html>

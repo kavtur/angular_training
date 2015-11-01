@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+	<title>My HTML File</title>
+	<script src="js/angular/angular.js"></script>
+	<script src="js/custom.js"></script>
+
+</head>
+	<body ng-app="task2" ng-controller="task2Controller">
+	<!-- 
+	2.1 create any directive with isolated scope (tab control with callbacks on activating new tab) which will use ng-transclude
+		Tab control should have not limited number of possible tabs inside.
+		It should have callback onTabActivated so that each tab could load data only in case it's needed (lazy loading for each tab)
+		
+	2.2 Cover the tab control from previous task with tests which demonstrate that callback are called when tab is activated
+	-->
+	<tabs >
+		<tab name="Tab1" on-tab-activated="tabActivated(name)">
+			<div> Tab 1 header</div>
+			<div> Tab 1 Content</div>
+		</tab>
+
+		<tab name="Tab2" on-tab-activated="tabActivated(name)">
+			<div> Tab 2 header</div>
+			<div> Tab 2 Content</div>
+		</tab>
+	</tabs>
+
+	</body>
+</html>
