@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8">
+	<title>My HTML File</title>
+	<script src="js/angular/angular.js"></script>
+	<script src="js/custom.js"></script>
+
+</head>
+	<body ng-app="task4" >
+	<!-- 
+	4. Implement application that will demonstrate communication between directives with firing events.
+	For that place directives in a different scopes with the only parent which is root scope.
+	-->
+	<basket>
+		<div>Basket:</div>
+		<div ng-repeat="basketItem in basketItems" >
+			<div  ng-click="removeFromBasket(basketItem)">{{basketItem.name}}</div>
+		</div>
+		<div>Count: {{basketItems.length}}</div>
+	</basket>
+
+	<items-list>
+		<div>All items:</div>
+		<div ng-repeat="item in items" >
+			<div ng-click="addToBasket(item)">{{item.name}}</div>
+		</div>
+	</items-list>
+	</body>
+</html>
