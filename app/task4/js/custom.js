@@ -6,7 +6,7 @@ function changeElementPosition(scope, item, allItems){
             newItems.push(allItems[rootItem]);
           }
         }
-      return newItems;  
+      return newItems;
 }
 module.directive('basket', function() {
     return {
@@ -18,7 +18,7 @@ module.directive('basket', function() {
         event.targetScope.items=changeElementPosition($scope,item,event.targetScope.items);
       });
       $scope.removeFromBasket = function(item) {
-            $scope.$broadcast('REMOVE_FROM_BASKET', item);           
+            $scope.$broadcast('REMOVE_FROM_BASKET', item);
         };
       }]
     };
@@ -30,7 +30,7 @@ module.directive('itemsList', function() {
      controller: ['$scope', function($scope) {
          $scope.items = [{name:"item1"},{name:"item2"}];
         $scope.addToBasket = function(item) {
-            $scope.$broadcast('ADD_TO_BASKET', item);           
+            $scope.$broadcast('ADD_TO_BASKET', item);
         };
       $scope.$on('REMOVE_FROM_BASKET', function(event, item) {
         $scope.items.push(item);

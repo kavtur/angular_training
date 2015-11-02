@@ -5,10 +5,10 @@
   <title>My HTML File</title>
   <script src="js/angular/angular.js"></script>
   <script src="js/custom.js"></script>
-  
+
 </head>
 <body ng-init="scopeValue='ololo'">
-<!-- 
+<!--
 1. To display the inheritance of scopes in angularjs applications do the following:
  a. with ng-init create a shared value in root scope
  b. create parentCtrl1 and parentCtrl2 on the same level under root scope
@@ -23,7 +23,7 @@
 					<div ng-controller="parentCtrl1">
 						<span><input ng-model="$root.scopeValue" type="text"/></span>
 						<span>{{$root.scopeValue}}</span>
-						
+
 						<div ng-controller="ChildCtrl1">
 							ChildCtrl1:
 							<span><input ng-model="$root.scopeValue" type="text"/></span>
