@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="task1">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <script src="js/angular/angular.js"></script>
+  <script src="js/custom.js"></script>
+  
+</head>
+<body ng-init="scopeValue='ololo'">
+<!-- 
+1. To display the inheritance of scopes in angularjs applications do the following:
+ a. with ng-init create a shared value in root scope
+ b. create parentCtrl1 and parentCtrl2 on the same level under root scope
+ c. in the scope level of parentCtrl1 and parentCtrl2 place inputs with ng-model bound to shared value
+ d. near each input place output of shared value with {{}} expression
+ e. create ChildCtrl1 and ChildCtrl2 under parentCtrl1 scope
+ f. in the scope level of ChildCtrl1 and ChildCtrl2 place inputs with ng-model bound to shared value
+ g. near each inputs place outputs of shared value with {{}} expression
+ h. improve the application so that all the {{}} show the same values after different scenarios of typing in valuse into different inputs.
+-->
+					parentCtrl1:
+					<div ng-controller="parentCtrl1">
+						<span><input ng-model="$root.scopeValue" type="text"/></span>
+						<span>{{$root.scopeValue}}</span>
+						
+						<div ng-controller="ChildCtrl1">
+							ChildCtrl1:
+							<span><input ng-model="$root.scopeValue" type="text"/></span>
+							<span>{{$root.scopeValue}}</span>
+						</div>
+					</div>
+					parentCtrl2:
+					<div ng-controller="parentCtrl2">
+						<span><input ng-model="$root.scopeValue" type="text"/></span>
+						<span>{{$root.scopeValue}}</span>
+
+						<div ng-controller="ChildCtrl2">
+							ChildCtrl2:
+							<span><input ng-model="$root.scopeValue" type="text"/></span>
+							<span>{{$root.scopeValue}}</span>
+						</div>
+					</div>
+
+
+</body>
+</html>
