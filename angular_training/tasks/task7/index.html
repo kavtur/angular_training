@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+<head>
+  <meta charset="utf-8">
+  <title>Task7</title>
+  <link rel="stylesheet" href="3rdparty/bootstrap/dist/css/bootstrap.css"> 
+  <link rel="stylesheet" href="3rdparty/jquery-ui/jquery-ui.css"> 
+
+  <script src="3rdparty/jquery.min.js"></script>
+  <script src="3rdparty/jquery-ui/jquery-ui.js"></script>
+  <script src="3rdparty/bootstrap/js/collapse.js"></script>
+  <script src="3rdparty/angular.js"></script>
+
+  <script src="js/jquery.ui.filelist.js"></script>
+  <script src="js/app.js"></script>
+
+</head>
+<body ng-controller="listFilesCtrl"> 
+  
+  <div>
+    <list-files-dialog title="List files" list-files="listFiles"></list-files-dialog>
+  </div>
+
+  Selected files:
+  <ul>
+      <li ng-repeat="file in listFiles" listFiles="listFiles" ng-if="file.selected">
+        {{file.name}}
+      </li>
+
+   </ul> 
+
+</body>
+</html>
